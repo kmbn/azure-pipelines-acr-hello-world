@@ -39,14 +39,14 @@ steps:
 
 - script: |
     pushd '$(projectRoot)'
-    pytest --junitxml=$(projectRoot)
+    pytest --junitxml=test-results.xml
   condition: succeededOrFailed()
   displayName: 'Run tests'
 
 - task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:
-    testResultsFiles: "**/TEST-*.xml"
+    testResultsFiles: "test-results.xml"
     testRunTitle: 'Python $(PYTHON_VERSION)'
 
 - script: |
