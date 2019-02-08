@@ -9,7 +9,7 @@ variables:
   # - registryName
   # - servicePrincipleId
   # - servicePrinciplePassword
-  imageTage: '$(Build.BuildId)'
+  imageTag: '$(Build.BuildId)'
 
 steps:
 - task: UsePythonVersion@0
