@@ -39,7 +39,7 @@ steps:
 
 - script: |
     pushd '$(projectRoot)'
-    pytest
+    pytest --junitxml=$(projectRoot)
   condition: succeededOrFailed()
   displayName: 'Run tests'
 
